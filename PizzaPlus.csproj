@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net472</TargetFramework>
+		<AssemblyName>$(MSBuildProjectName)</AssemblyName>
+		<AssetBundlePath>UnityProject - PizzaPlus\content\mod.assets</AssetBundlePath>
+		<RootNamespace>Kitchen$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
+		<LangVersion>latest</LangVersion>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Yariazen.PlateUp.ModBuildUtilities" Version="1.11.5" />
+	</ItemGroup>
+	
+	<ItemGroup>
+	  <Compile Remove="UnityProject - PizzaPlus\**" />
+	  <None Remove="UnityProject - PizzaPlus\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Folder Condition="Exists('Changelogs')" Include="Changelogs\" />
+		<Folder Condition="Exists('Changelogs\Github')" Include="Changelogs\Github" />
+		<Folder Condition="Exists('Changelogs\Workshop')" Include="Changelogs\Workshop" />
+	</ItemGroup>
+</Project>
